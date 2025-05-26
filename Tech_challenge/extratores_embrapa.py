@@ -1,41 +1,79 @@
 import pandas as pd
 
-# URL específico para a produção de uvas de mesa
+# === PRODUÇÃO - UVA MESA ===
 URL_PRODUCAO_UVA_MESA = "http://vitibrasil.cnpuv.embrapa.br/download/Producao/ProducUvaMesa.csv"
-# Caminho para guardar/ler o ficheiro de fallback para este dado específico
 FALLBACK_PRODUCAO_UVA_MESA_CSV = "fallback_producao_uva_mesa.csv"
 
 def buscar_dados_producao_uva_mesa_online():
-    """
-    Tenta buscar os dados de produção de uvas de mesa diretamente do site da Embrapa.
-    Retorna um DataFrame do pandas ou None se falhar.
-    """
-    print(f"Tentando buscar dados de produção de uva de mesa online de: {URL_PRODUCAO_UVA_MESA}")
     try:
-        # Especificar timeout para não ficar preso indefinidamente
         df = pd.read_csv(URL_PRODUCAO_UVA_MESA, sep=';', encoding='latin1', timeout=10)
-        print("Dados de produção de uva de mesa obtidos online com sucesso!")
-        # Salvar uma cópia local para o fallback após o sucesso
         df.to_csv(FALLBACK_PRODUCAO_UVA_MESA_CSV, index=False, sep=';', encoding='latin1')
-        print(f"Fallback salvo em {FALLBACK_PRODUCAO_UVA_MESA_CSV}")
         return df
     except Exception as e:
-        print(f"Erro ao buscar dados de produção de uva de mesa online: {e}")
+        print(f"Erro Produção Online: {e}")
         return None
 
 def carregar_dados_producao_uva_mesa_fallback():
-    """
-    Carrega os dados de produção de uvas de mesa do ficheiro CSV de fallback local.
-    Retorna um DataFrame do pandas ou None se o ficheiro não for encontrado.
-    """
-    print(f"Tentando carregar dados de produção de uva de mesa do fallback: {FALLBACK_PRODUCAO_UVA_MESA_CSV}")
     try:
-        df = pd.read_csv(FALLBACK_PRODUCAO_UVA_MESA_CSV, sep=';', encoding='latin1')
-        print("Dados de produção de uva de mesa carregados do fallback com sucesso!")
-        return df
-    except FileNotFoundError:
-        print(f"Erro: Ficheiro de fallback {FALLBACK_PRODUCAO_UVA_MESA_CSV} não encontrado.")
-        return None
+        return pd.read_csv(FALLBACK_PRODUCAO_UVA_MESA_CSV, sep=';', encoding='latin1')
     except Exception as e:
-        print(f"Erro ao carregar dados do fallback {FALLBACK_PRODUCAO_UVA_MESA_CSV}: {e}")
+        print(f"Erro Fallback Produção: {e}")
         return None
+
+# === PROCESSAMENTO ===
+URL_PROCESSAMENTO = "http://vitibrasil.cnpuv.embrapa.br/download/Processa/Processa.csv"
+FALLBACK_PROCESSAMENTO_CSV = "fallback_processamento.csv"
+
+def buscar_dados_processamento_online():
+    try:
+        df = pd.read_csv(URL_PROCESSAMENTO, sep=';', encoding='latin1', timeout=10)
+        df.to_csv(FALLBACK_PROCESSAMENTO_CSV, index=False, sep=';', encoding='latin1')
+        return df
+    except Exception as e:
+        print(f"Erro Processamento Online: {e}")
+        return None
+
+def carregar_dados_processamento_fallback():
+    try:
+        return pd.read_csv(FALLBACK_PROCESSAMENTO_CSV, sep=';', encoding='latin1')
+    except Exception as e:
+        print(f"Erro Fallback Processamento: {e}")
+        return None
+
+# === COMERCIALIZAÇÃO ===
+URL_COMERCIALIZACAO = "http://vitibrasil.cnpuv.embrapa.br/download/Comercio/Comercio.csv"
+FALLBACK_COMERCIALIZACAO_CSV = "fallback_comercializacao.csv"
+
+def buscar_dados_comercializacao_online():
+    try:
+        df = pd.read_csv(URL_COMERCIALIZACAO, sep=';', encoding='latin1', timeout=10)
+        df.to_csv(FALLBACK_COMERCIALIZACAO_CSV, index=False, sep=';', encoding='latin1')
+        return df
+    except Exception as e:
+        print(f"Erro Comercialização Online: {e}")
+        return None
+
+def carregar_dados_comercializacao_fallback():
+    try:
+        return pd.read_csv(FALLBACK_COMERCIALIZACAO_CSV, sep=';', encoding='latin1')
+    except Exception as e:
+        print(f"Erro Fallback Comercialização: {e}")
+        return None
+
+# === IMPORTAÇÃO (Placeholder) ===
+def buscar_dados_importacao_online():
+    print("Importação online não implementada.")
+    return None
+
+def carregar_dados_importacao_fallback():
+    print("Fallback de importação não implementado.")
+    return None
+
+# === EXPORTAÇÃO (Placeholder) ===
+def buscar_dados_exportacao_online():
+    print("Exportação online não implementada.")
+    return None
+
+def carregar_dados_exportacao_fallback():
+    print("Fallback de exportação não implementado.")
+    return None
