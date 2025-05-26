@@ -6,7 +6,7 @@ A aplicação consiste em uma **API REST em Python (FastAPI)** para consulta de 
 ---
 
 ## Link de Deploy
-🔗 [Aesse a API ao vivo](https://stunning-fiesta-5gv4gpjj696qcvpwg-8000.app.github.dev)
+🔗 [Acesse a API ao vivo](https://stunning-fiesta-5gv4gpjj696qcvpwg-8000.app.github.dev)
 
 ---
 
@@ -42,8 +42,10 @@ git clone https://github.com/guidonatooo/FIAP
 cd FIAP
 
 ---
-## Instale as dependências
 
+### 2. Instale as dependências
+
+```bash
 pip install -r requirements.txt
 
 ---
