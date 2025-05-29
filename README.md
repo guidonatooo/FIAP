@@ -142,7 +142,7 @@ Os scripts de raspagem estão disponíveis na raiz como documentação técnica 
 
 ## 🎥 Vídeo de apresentação
 
-🔗 [Assista ao vídeo aqui](https://SEU-LINK-DO-VIDEO)
+🔗 [Assista ao vídeo aqui](https://www.loom.com/share/fdb838fc0b71482fb8c2c967478008f0?sid=a5285510-66b7-4d89-b6da-12a69770cc07)
 
 ---
 
