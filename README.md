@@ -1,4 +1,3 @@
-```markdown
 # API de Dados Vitivinícolas da Embrapa — Versão Offline
 
 Este projeto foi desenvolvido como parte do **Tech Challenge – Fase 1** do curso de **Machine Learning Engineering da FIAP**.
