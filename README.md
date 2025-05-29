@@ -56,6 +56,14 @@ uvicorn main:app --reload
 
 ---
 ## Estrutura de Pastas
+
+/dados/
+├── comercializacao.csv
+├── exportacao.csv
+├── importacao.csv
+├── processamento.csv
+└── producao.csv
+
 Tech_challenge/
 │
 ├── main.py                     # Código principal da API
@@ -88,4 +96,14 @@ Este projeto foi desenvolvido individualmente por Guilherme para fins educaciona
 Contribuições e melhorias são bem-vindas!
 
 ---
+## Extras
 
+Este projeto inicialmente implementava raspagem de dados diretamente do site da Embrapa.  
+No entanto, como o site está atualmente fora do ar, a API foi adaptada para operar 100% com arquivos locais.  
+
+Scripts de raspagem originais podem ser encontrados em:
+- Raspa_Comercializacao.ipynb
+- Raspa_Exportacao.ipynb
+- Raspa_Importacao.ipynb
+- Raspa_Processamento.ipynb
+- Raspa_Producao.ipynb
