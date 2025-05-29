@@ -3,7 +3,7 @@ from fastapi.responses import JSONResponse
 import requests
 import pandas as pd
 
-from antigo_extratores_embrapa import (
+from extratores_embrapa import (
     buscar_dados_producao_uva_mesa_online,
     carregar_dados_producao_uva_mesa_fallback,
     buscar_dados_processamento_online,
