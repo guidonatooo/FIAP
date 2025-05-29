@@ -11,6 +11,8 @@ Devido à indisponibilidade do site oficial da Embrapa, todos os dados são serv
 
 🔗 [Acesse a API ao vivo](https://obscure-spork-97wrxjprq952xjqj.github.dev/)
 
+🔗 [Acesse os documentos presentes na API ao vivo](https://obscure-spork-97wrxjprq952xjqj-8000.app.github.dev/docs#/)
+
 ---
 
 ## ✅ Funcionalidades
