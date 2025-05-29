@@ -1,27 +1,37 @@
 import pandas as pd
+import os
 
-# Caminhos fixos dos arquivos .csv (todos na pasta 'dados')
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+
+PROJECT_ROOT = os.path.dirname(SCRIPT_DIR)
+
+DADOS_DIR = os.path.join(PROJECT_ROOT, 'dados')
+
 CAMINHOS_CSV = {
-    "producao": "../dados/producao.csv",
-    "processamento": "../dados/processamento.csv",
-    "comercializacao": "../dados/comercializacao.csv",
-    "importacao": "../dados/importacao.csv",
-    "exportacao": "../dados/exportacao.csv"
+    "producao": os.path.join(DADOS_DIR, "producao.csv"),
+    "processamento": os.path.join(DADOS_DIR, "processamento.csv"),
+    "comercializacao": os.path.join(DADOS_DIR, "comercializacao.csv"),
+    "importacao": os.path.join(DADOS_DIR, "importacao.csv"),
+    "exportacao": os.path.join(DADOS_DIR, "exportacao.csv")
 }
 
 def carregar_csv_local(nome_chave):
     caminho = CAMINHOS_CSV.get(nome_chave)
     if not caminho:
-        print(f"[ERRO] Caminho não definido para: {nome_chave}")
+        print(f"[AVISO] Caminho não definido para a chave: {nome_chave} no dicionário CAMINHOS_CSV.")
         return None
+
+    if not os.path.exists(caminho):
+        print(f"[ERRO] Arquivo CSV não encontrado em: {caminho}")
+        return None
+
     try:
         df = pd.read_csv(caminho, sep=";", encoding="latin1")
         return df
     except Exception as e:
-        print(f"[ERRO] Falha ao carregar {caminho}: {e}")
+        print(f"[ERRO] Falha ao carregar o arquivo CSV {caminho}. Detalhe do erro: {e}")
         return None
 
-# Funções específicas que usam a função genérica
 def carregar_dados_producao():
     return carregar_csv_local("producao")
 
