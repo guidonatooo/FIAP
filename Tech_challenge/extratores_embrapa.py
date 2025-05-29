@@ -2,11 +2,11 @@ import pandas as pd
 
 # Caminhos fixos dos arquivos .csv (todos na pasta 'dados')
 CAMINHOS_CSV = {
-    "producao": "dados/producao.csv",
-    "processamento": "dados/processamento.csv",
-    "comercializacao": "dados/comercializacao.csv",
-    "importacao": "dados/importacao.csv",
-    "exportacao": "dados/exportacao.csv"
+    "producao": "../dados/producao.csv",
+    "processamento": "../dados/processamento.csv",
+    "comercializacao": "../dados/comercializacao.csv",
+    "importacao": "../dados/importacao.csv",
+    "exportacao": "../dados/exportacao.csv"
 }
 
 def carregar_csv_local(nome_chave):
