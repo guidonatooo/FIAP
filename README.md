@@ -45,18 +45,17 @@ Tech_challenge/
 │ ├── extratores_embrapa.py
 │ └── requirements.txt
 
-├── online/
-│ ├── fallback_*.csv
-│ ├── main.py
-│ ├── extratores_embrapa.py
-│ └── requirements.txt
 
+├── _pycache_
+├── .venv
 ├── Diagrama.png # Arquitetura da solução
-└── README.md
+├── dockerfile
+├── extratores_embrapa.py
+├── main.py
+├── README.md
+├── render.yaml
+└── requirements.txt
 
-yaml
-Copy
-Edit
 
 ---
 
