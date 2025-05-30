@@ -95,6 +95,7 @@ uvicorn main:app --reload
 Acesse: https://obscure-spork-97wrxjprq952xjqj-8000.app.github.dev/  ## Verificar se o API está funcionando
 Acesse: https://obscure-spork-97wrxjprq952xjqj-8000.app.github.dev/docs ## Acessar API via  
 ---
+```bash
 
 ## 🗺️ Diagrama de arquitetura
 
@@ -110,6 +111,6 @@ Acesse: https://obscure-spork-97wrxjprq952xjqj-8000.app.github.dev/docs ## Acess
 
 ## 👨‍💻 Autor
 
-Guilherme Donato – [LinkedIn](https://www.linkedin.com/in/gdonatomoraes)
+Guilherme Donato – [LinkedIn](https://www.linkedin.com/in/gdoantomoraes)
 
 ---
