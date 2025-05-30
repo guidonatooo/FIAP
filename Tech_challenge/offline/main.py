@@ -10,15 +10,14 @@ from extratores_embrapa import (
 )
 
 app = FastAPI(
-    title="API de Dados Vitivinícolas da Embrapa (Versão Offline)",
-    description="API baseada em arquivos locais CSV devido à indisponibilidade do site da Embrapa.",
+    title="API de Dados Vitivinícolas da Embrapa — Versão Offline",
+    description="API desenvolvida com dados locais da Embrapa armazenados em arquivos .csv",
     version="1.0.0"
 )
 
 @app.get("/")
 async def root():
-    return {"mensagem": "API de Dados Vitivinícolas da Embrapa - versão offline (dados locais)"}
-
+    return {"mensagem": "Bem-vindo à API Offline de Dados Vitivinícolas da Embrapa!"}
 
 @app.get("/producao", tags=["Produção"])
 async def get_producao():
@@ -40,11 +39,7 @@ async def get_importacao():
 async def get_exportacao():
     return responder_dados(carregar_dados_exportacao(), "exportação de produtos")
 
-
 def responder_dados(dados_df, descricao):
-    """
-    Respostas e mensagens de erro
-    """
     if dados_df is not None:
         return {
             "status": "sucesso",

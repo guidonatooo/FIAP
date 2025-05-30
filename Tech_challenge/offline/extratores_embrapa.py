@@ -1,11 +1,7 @@
 import pandas as pd
 import os
 
-SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-
-PROJECT_ROOT = os.path.dirname(SCRIPT_DIR)
-
-DADOS_DIR = os.path.join(PROJECT_ROOT, 'dados')
+DADOS_DIR = os.path.join(os.path.dirname(__file__), 'dados')
 
 CAMINHOS_CSV = {
     "producao": os.path.join(DADOS_DIR, "producao.csv"),
