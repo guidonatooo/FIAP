@@ -98,7 +98,7 @@ Acesse: https://obscure-spork-97wrxjprq952xjqj-8000.app.github.dev/docs ## Acess
 
 ## 🗺️ Diagrama de arquitetura
 
-![Diagrama da Solução](./Diagrama.jpg)
+![Diagrama da Solução](./Diagrama.jpg_)
 
 ---
 
@@ -110,6 +110,6 @@ Acesse: https://obscure-spork-97wrxjprq952xjqj-8000.app.github.dev/docs ## Acess
 
 ## 👨‍💻 Autor
 
-Guilherme Donato – [LinkedIn](https://www.linkedin.com/in/)
+Guilherme Donato – [LinkedIn](https://www.linkedin.com/in/gdonatomoraes)
 
 ---
