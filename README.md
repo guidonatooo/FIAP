@@ -101,7 +101,7 @@ Tech_challenge/
 🗺️ Diagrama de arquitetura
 ![Diagrama](./Diagrama.jpg)
 
-🎥 Vídeo de apresentação 🔗 [Assista aqui]((https://www.loom.com/share/fdb838fc0b71482fb8c2c967478008f0?sid=a5285510-66b7-4d89-b6da-12a69770cc07))
+🎥 Vídeo de apresentação 🔗 [Assista aqui](https://www.loom.com/share/fdb838fc0b71482fb8c2c967478008f0?sid=a5285510-66b7-4d89-b6da-12a69770cc07)
 
 👨‍💻 Autor
 Guilherme Donato — [LinkedIn](https://www.linkedin.com/in/guilhermedonatomoraes/)
