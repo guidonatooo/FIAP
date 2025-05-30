@@ -3,7 +3,16 @@ services:
     name: api-embrapa-offline
     env: python
     plan: free
-    buildCommand: pip install -r offline/requirements.txt
+    buildCommand: pip install -r requirements.txt
     startCommand: uvicorn main:app --host 0.0.0.0 --port 10000
     workingDir: offline
+    autoDeploy: true
+
+  - type: web
+    name: api-embrapa-online
+    env: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port 10000
+    workingDir: online
     autoDeploy: true
