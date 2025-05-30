@@ -1,54 +1,64 @@
-# API de Dados Vitivinícolas da Embrapa — Versão Offline
+# 🍇 API de Dados Vitivinícolas da Embrapa — Online & Offline
 
 Este projeto foi desenvolvido como parte do **Tech Challenge – Fase 1** do curso de **Machine Learning Engineering da FIAP**.
 
-A proposta é uma **API REST** desenvolvida em **Python com FastAPI**, que permite consultar dados da vitivinicultura brasileira.  
-Devido à indisponibilidade do site oficial da Embrapa, todos os dados são servidos via **arquivos locais `.csv`** previamente baixados.
+A proposta é uma **API REST em Python com FastAPI** para consulta de dados da vitivinicultura brasileira disponibilizados originalmente pela **Embrapa**.
+
+O projeto foi estruturado com **duas versões complementares**:
 
 ---
 
-## 🚀 Link da API (GitHub Codespaces)
+## 🧩 Estrutura do Projeto
 
-🔗 [Acesse a API ao vivo](https://obscure-spork-97wrxjprq952xjqj.github.dev/)
+| Versão     | Descrição                                                                 |
+|------------|---------------------------------------------------------------------------|
+| `offline`  | Lê exclusivamente dados locais em `.csv`, usada após a queda do site.     |
+| `online`   | Tenta obter dados ao vivo via scraping, com fallback automático para CSV. |
 
-🔗 [Acesse os documentos presentes na API ao vivo](https://obscure-spork-97wrxjprq952xjqj-8000.app.github.dev/docs#/)
+---
+
+## 🚀 Links de Deploy (Render)
+
+- 🔗 [API - Versão Offline (Render)](https://seu-link-offline.onrender.com)
+- 🔗 [API - Versão Online (Render)](https://seu-link-online.onrender.com)
 
 ---
 
 ## ✅ Funcionalidades
 
-- Fornece dados de produção, processamento, comercialização, importação e exportação de produtos vitivinícolas
-- Utiliza arquivos `.csv` armazenados localmente
-- Endpoints bem definidos
+- Fornecimento de dados da produção, processamento, comercialização, importação e exportação de produtos vitivinícolas
+- Modularização do projeto (`main.py`, `extratores_embrapa.py`)
 - Swagger UI disponível em `/docs`
-- Organização modular (`main.py` + `extratores_embrapa.py`)
+- Versão com scraping ao vivo e fallback (quando disponível)
 
 ---
 
 ## 📂 Estrutura de Pastas
 
-```
+Tech_challenge/
 
-Tech\_challenge/
-├── dados/                      # Arquivos CSV utilizados
-│   ├── producao.csv
-│   ├── processamento.csv
-│   ├── comercializacao.csv
-│   ├── importacao.csv
-│   └── exportacao.csv
-│
-├── extratores\_embrapa.py       # Funções de leitura dos CSVs
-├── main.py                     # Endpoints da API
-├── requirements.txt            # Dependências do projeto
-├── README.md
-├── Diagrama.png                # Arquitetura da API
-└── Raspa\_\*.ipynb               # Notebooks antigos de raspagem (extras)
+├── offline/
+│ ├── dados/
+│ │ ├── producao.csv
+│ │ ├── processamento.csv
+│ │ └── ...etc
+│ ├── main.py
+│ ├── extratores_embrapa.py
+│ └── requirements.txt
 
-````
+├── online/
+│ ├── fallback_*.csv
+│ ├── main.py
+│ ├── extratores_embrapa.py
+│ └── requirements.txt
+
+├── Diagrama.png # Arquitetura da solução
+└── README.md
+---
 
 ---
 
-## 📌 Endpoints disponíveis
+## 📌 Endpoints disponíveis (ambas as versões)
 
 | Método | Rota               | Descrição                              |
 |--------|--------------------|----------------------------------------|
@@ -58,80 +68,32 @@ Tech\_challenge/
 | GET    | `/comercializacao` | Comercialização de produtos            |
 | GET    | `/importacao`      | Dados de importação                    |
 | GET    | `/exportacao`      | Dados de exportação                    |
-| GET    | `/docs`            | Interface Swagger para testes          |
-
----
-
-## 🧱 Stack utilizada
-
-- Python 3.11+
-- FastAPI
-- Uvicorn
-- Pandas
+| GET    | `/docs`            | Interface Swagger                      |
 
 ---
 
 ## ⚙️ Como rodar localmente
 
-### 1. Clone o repositório
+### Para a versão **Offline**:
 
 ```bash
-git clone https://github.com/guidonatooo/FIAP
-````
-
-### 2. Crie e ative um ambiente virtual
-
-```bash
+cd offline
 python -m venv .venv
-```
-
-#### Ativando o ambiente:
-
-* **Linux/macOS ou GitHub Codespaces**:
-
-```bash
-source .venv/bin/activate
-```
-
-* **Windows (cmd ou PowerShell)**:
-
-```bash
-.venv\Scripts\activate
-```
-
-⚠️ **Atenção**: No GitHub Codespaces, ative o ambiente com `source .venv/bin/activate`, pois o caminho do Windows **não funciona** no terminal bash.
-
-Como confirmação observe (.venv) @guidonatooo ➜ /workspaces/FIAP (main) $
-
----
-
-### 3. Instale as dependências
-
-```bash
+source .venv/bin/activate           # (ou .venv\Scripts\activate no Windows)
 pip install -r requirements.txt
-```
-
----
-
-### 4. Inicie a API
-
-```bash
 uvicorn main:app --reload
-```
+Para a versão Online (se quiser testar scraping/fallback):
+bash
+Copy
+Edit
+cd online
+python -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+uvicorn main:app --reload
 
-## 🧪 Extras: Notebooks de raspagem
-
-Inicialmente, este projeto utilizava scraping direto do site da Embrapa.
-Por conta da indisponibilidade do portal, os dados passaram a ser fornecidos apenas via arquivos `.csv`.
-
-Os scripts de raspagem estão disponíveis na raiz como documentação técnica adicional:
-
-* `Raspa_Producao.ipynb`
-* `Raspa_Processamento.ipynb`
-* `Raspa_Comercializacao.ipynb`
-* `Raspa_Importacao.ipynb`
-* `Raspa_Exportacao.ipynb`
-
+Acesse: https://obscure-spork-97wrxjprq952xjqj-8000.app.github.dev/  ## Verificar se o API está funcionando
+Acesse: https://obscure-spork-97wrxjprq952xjqj-8000.app.github.dev/docs ## Acessar API via  
 ---
 
 ## 🗺️ Diagrama de arquitetura
