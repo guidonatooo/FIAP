@@ -1,0 +1,17 @@
+# Imagem base
+FROM python:3.11
+
+# Define o diretório de trabalho dentro do container
+WORKDIR /app
+
+# Copia os arquivos do projeto para dentro da imagem
+COPY . /app
+
+# Instala dependências
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Expõe a porta padrão do Uvicorn
+EXPOSE 10000
+
+# Comando para iniciar o servidor
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "10000"]

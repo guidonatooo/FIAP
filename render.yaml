@@ -1,18 +1,15 @@
 services:
   - type: web
     name: api-embrapa-offline
-    env: python
+    env: docker
     plan: free
-    buildCommand: pip install -r Tech_challenge/offline/requirements.txt
-    startCommand: uvicorn main:app --host 0.0.0.0 --port 10000
-    workingDir: Tech_challenge/offline
+    dockerfilePath: Tech_challenge/offline/Dockerfile
     autoDeploy: true
 
+services:
   - type: web
-    name: api-embrapa-online
-    env: python
+    name: api-embrapa-offline
+    env: docker
     plan: free
-    buildCommand: pip install -r Tech_challenge/offline/requirements.txt
-    startCommand: uvicorn main:app --host 0.0.0.0 --port 10000
-    workingDir: Tech_challenge/online
+    dockerfilePath: Tech_challenge/online/Dockerfile
     autoDeploy: true
