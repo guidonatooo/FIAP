@@ -101,8 +101,13 @@ Tech_challenge/
 🗺️ Diagrama de arquitetura
 ![Diagrama](./Diagrama.jpg)
 
-🎥 Vídeo de apresentação 🔗 [Assista aqui](https://www.loom.com/share/fdb838fc0b71482fb8c2c967478008f0?sid=a5285510-66b7-4d89-b6da-12a69770cc07)
+
+🎥 Vídeo de apresentação (Codespace) 🔗 [Assista aqui](https://www.loom.com/share/fdb838fc0b71482fb8c2c967478008f0?sid=a5285510-66b7-4d89-b6da-12a69770cc07)
+
+🎥 Vídeo de apresentação 02 (Render) 🔗 [Assista aqui](https://www.loom.com/share/57695304477c4312ba6cb0480109ab2c?sid=7da762fd-bcdc-4466-8a9b-24235aeae688)
+
 
 👨‍💻 Autor
 Guilherme Donato — [LinkedIn](https://www.linkedin.com/in/guilhermedonatomoraes/)
+
 
