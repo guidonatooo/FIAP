@@ -19,9 +19,13 @@ O projeto foi estruturado com **duas versões complementares**:
 
 ## 🚀 Links de Deploy (Render)
 
-- 🔗 [API - Versão Offline (Render)](https://seu-link-offline.onrender.com)
-- 🔗 [API - Versão Online (Render)](https://seu-link-online.onrender.com)
+A API foi deployada utilizando o Render e está acessível publicamente através do seguinte link:
 
+🔗 [https://fiap.onrender.com](https://fiap.onrender.com)
+
+Você pode interagir com a documentação da API (Swagger UI) acessando:
+
+🔗 [https://fiap.onrender.com/docs](https://fiap.onrender.com/docs)
 ---
 
 ## ✅ Funcionalidades
